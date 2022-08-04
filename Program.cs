@@ -1,4 +1,6 @@
 using GenshinDB.Context;
+using GenshinDB.Repositories;
+using GenshinDB.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,9 @@ builder.Services.AddControllersWithViews();
 //Connection String
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
+
+builder.Services.AddTransient<INationRepository, NationRepository>();
+builder.Services.AddTransient<ICharactersRepository, CharactersRepository>();
 
 var app = builder.Build();
 
