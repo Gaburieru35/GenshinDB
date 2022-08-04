@@ -20,14 +20,16 @@ namespace GenshinDB.Models
         public string CharactersConstelation { get; set; }
 
         [Required]
-        public int CharacterRarity { get; set; }
+        public int CharactersRarity { get; set; }
+        [Required,StringLength(30)]
+        public string CharactersTitle { get; set; }
 
         [Required]
-        [StringLength(200)]
-        public string CharacterDescription { get; set; }
+        [StringLength(600)]
+        public string CharactersDescription { get; set; }
 
         [StringLength(300)]
-        public string CharacterImageURL { get; set; }
+        public string CharactersImageURL { get; set; }
         public int NationID { get; set; }
         public virtual Nations Nation { get; set; }
     }

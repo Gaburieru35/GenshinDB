@@ -4,16 +4,21 @@
     <h2>Characters</h2>
 </div>
 
-<div class="row">
+<ul class="cards">
     @foreach (var character in Model)
     {
-        <div class="card" style="width: 18rem;">
-            <img src="@character.CharacterImageURL" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">@character.CharactersName</h5>
-                <p class="card-text">@character.CharacterDescription</p>
-                <a href="#" class="btn btn-primary">Details</a>
+        <a class="card">
+            <img style="width:100%; height:auto" src="@character.CharactersImageURL" class="card__image" alt="" />
+            <div class="card__overlay">
+                <div class="card__header">
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                    <div class="card__header-text">
+                        <h3 class="card__title">@character.CharactersName</h3>
+                        <span class="card__status">@character.CharactersTitle</span>
+                    </div>
+                </div>
+                <p class="card__description">@character.CharactersDescription</p>
             </div>
-        </div>
+        </a>
     }
-</div>
+</ul>

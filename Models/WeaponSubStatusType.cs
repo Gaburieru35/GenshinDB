@@ -4,8 +4,7 @@ namespace GenshinDB.Models
 {
     public class WeaponSubStatusType
     {
-        [Key]
-        public string WeaponSubStatusTypeId { get; set; }
+        public int WeaponSubStatusTypeId { get; set; }
         [Required,StringLength(20)]
         public string WeaponSubStatusTypeName { get; set; }
 

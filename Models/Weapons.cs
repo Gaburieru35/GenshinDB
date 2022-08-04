@@ -24,9 +24,8 @@ namespace GenshinDB.Models
         public string WeaponImageURL { get; set; }
         [Required]
         public string WeaponRarity { get; set; }
-
+        [ForeignKey("WeaponSubStatusTypeId")]
         public int WeaponSubStatusTypeId { get; set; }
-
         public virtual WeaponSubStatusType WeaponSubStatusType { get; set; }
 
     }

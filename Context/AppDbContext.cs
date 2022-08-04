@@ -11,7 +11,8 @@ namespace GenshinDB.Context
 
         public DbSet<Nations> Nations { get; set; }
         public DbSet<Characters> Characters { get; set; }
-        public DbSet<WeaponSubStatusType> WeaponSubStatusTypes { get; set; }
+        public DbSet<WeaponSubStatusType> WeaponSubStatusType { get; set; }
         public DbSet<Weapons> Weapons { get; set; }
+
     }
 }
