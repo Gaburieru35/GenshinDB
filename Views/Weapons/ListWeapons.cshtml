@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GenshinDB.Models.Weapons>
+
+<div>
+    <h2>Weapons</h2>
+</div>
+
+<ul class="cards">
+    @foreach (var weapons in Model)
+    {
+        string type = @weapons.WeaponType.ToString();
+        switch (type)
+        {
+            case "1":
+                type = "Polearm";
+                break;
+            case "2":
+                type = "Bow";
+                break;
+            case "3":
+                type = "Sword";
+                break;
+            case "4":
+                type = "Claymore";
+                break;
+            case "5":
+                type = "Catalyst";
+                break;
+        }
+
+        <a class="card" href="#">
+            <img style="width:100%; height:auto;" src="@weapons.WeaponImageURL" class="card__image" alt="" />
+            <div class="card__overlay">
+                <div class="card__header">
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                    <div class="card__header-text">
+                        <h3 class="card__title">@weapons.WeaponName</h3>
+                        <span class="card__status" id="weapontype">@type</span>
+                    </div>
+                </div>
+                <p class="card__description">@weapons.WeaponDescription</p>
+            </div>
+        </a>
+    }
+</ul>

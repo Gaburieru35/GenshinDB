@@ -7,11 +7,11 @@
 <ul class="cards">
     @foreach (var character in Model)
     {
-        <a class="card">
-            <img style="width:100%; height:auto" src="@character.CharactersImageURL" class="card__image" alt="" />
+        <a class="card" href="#">
+            <img style="width:100%; height:auto;" src="@character.CharactersImageURL" class="card__image" alt="" />
             <div class="card__overlay">
                 <div class="card__header">
-                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path/></svg>
                     <div class="card__header-text">
                         <h3 class="card__title">@character.CharactersName</h3>
                         <span class="card__status">@character.CharactersTitle</span>
