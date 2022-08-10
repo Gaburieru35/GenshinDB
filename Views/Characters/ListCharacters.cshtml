@@ -7,13 +7,42 @@
 <ul class="cards">
     @foreach (var character in Model)
     {
+        string nation = @character.NationID.ToString();
+        switch (nation)
+        {
+            case "1":
+                nation = "Monstadt";
+                break;
+            case "2":
+                nation = "Liyue";
+                break;
+            case "3":
+                nation = "Inazuma";
+                break;
+            case "4":
+                nation = "Sumeru";
+                break;
+            case "5":
+                nation = "Fontaine";
+                break;
+            case "6":
+                nation = "Natlan";
+                break;
+            case "7":
+                nation = "Snezhnaya";
+                break;
+            case "8":
+                nation = "Khaenriah";
+                break;
+        }
         <a class="card" href="#">
             <img style="width:100%; height:auto;" src="@character.CharactersImageURL" class="card__image" alt="" />
             <div class="card__overlay">
                 <div class="card__header">
-                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path/></svg>
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                     <div class="card__header-text">
-                        <h3 class="card__title">@character.CharactersName</h3>
+                        <h3 class="card__title">@character.CharactersName </h3>
+                        <h6 class="card__status">@nation</h6>
                         <span class="card__status">@character.CharactersTitle</span>
                     </div>
                 </div>
