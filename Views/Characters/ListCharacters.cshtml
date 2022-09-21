@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<GenshinDB.Models.Characters>
 
 <div>
-    <h2>Characters</h2>
+    <h2 style="margin-top:8px;">Characters</h2>
 </div>
 
 <ul class="cards">
@@ -35,7 +35,7 @@
                 nation = "Khaenriah";
                 break;
         }
-        <a class="card" href="#">
+        <a class="card" asp-controller="Characters" asp-action="CharacterDetails" asp-route-id="@character.CharactersId">
             <img style="width:100%; height:auto;" src="@character.CharactersImageURL" class="card__image" alt="" />
             <div class="card__overlay">
                 <div class="card__header">

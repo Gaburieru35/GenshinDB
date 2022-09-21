@@ -18,5 +18,12 @@ namespace GenshinDB.Controllers
             var characters = _characterRepository.Characters;
             return View(characters);
         }
+
+        public IActionResult CharacterDetails(int id)
+        {
+            var characters = _characterRepository.GetCharactersById(id);
+            //characters.GetType();
+            return View(characters);
+        }
     }
 }

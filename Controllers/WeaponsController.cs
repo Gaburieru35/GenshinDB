@@ -17,5 +17,11 @@ namespace GenshinDB.Controllers
             var weapons = _weaponRepository.Weapons;
             return View(weapons);
         }
+
+        public IActionResult WeaponDetails(int id)
+        {
+            var weapons = _weaponRepository.GetWeaponsByID(id);
+            return View(weapons);
+        }
     }
 }

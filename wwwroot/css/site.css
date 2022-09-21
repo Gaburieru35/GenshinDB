@@ -274,11 +274,20 @@
     position: relative;
     background: #E4E9F7;
     min-height: 100vh;
-    top: 0;
+    top: 0px;
     left: 78px;
     width: calc(100% - 78px);
     transition: all 0.5s ease;
     z-index: 2;
+}
+
+.home-section .container .pb-3 h2 {
+    position: relative;
+    background: #E4E9F7;
+    top: 0px;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
 }
 
 .sidebar.open ~ .home-section {
@@ -296,5 +305,5 @@
 
 .home-section .container{
     margin-left: 0px;
-    margin-right: -50px;
+    margin-right: 0px;
 }
