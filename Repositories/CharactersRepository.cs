@@ -15,7 +15,7 @@ namespace GenshinDB.Repositories
             _context = context;
         }
 
-        public IEnumerable<Characters> Characters => _context.Characters.Include(n => n.Nation);
+        public IEnumerable<Characters> Characters => _context.Characters;
 
         public Characters GetCharactersById(int characterid)
         {

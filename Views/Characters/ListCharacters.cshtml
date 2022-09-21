@@ -5,9 +5,18 @@
 </div>
 
 <ul class="cards">
-    @foreach (var character in Model)
+    @foreach (var characters in Model)
     {
-        string nation = @character.NationID.ToString();
+        string nation = @characters.NationID.ToString();
+        string vision = @characters.VisionId.ToString();
+
+        switch (vision)
+        {
+            case "1":
+                vision = "Pyro";
+                break;
+        }
+
         switch (nation)
         {
             case "1":
@@ -35,18 +44,18 @@
                 nation = "Khaenriah";
                 break;
         }
-        <a class="card" asp-controller="Characters" asp-action="CharacterDetails" asp-route-id="@character.CharactersId">
-            <img style="width:100%; height:auto;" src="@character.CharactersImageURL" class="card__image" alt="" />
+        <a class="card" asp-controller="Characters" asp-action="CharacterDetails" asp-route-id="@characters.CharactersId">
+            <img style="width:100%; height:auto;" src="@characters.CharactersImageURL" class="card__image" alt="" />
             <div class="card__overlay">
                 <div class="card__header">
-                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path/></svg>
                     <div class="card__header-text">
-                        <h3 class="card__title">@character.CharactersName </h3>
-                        <h6 class="card__status">@nation</h6>
-                        <span class="card__status">@character.CharactersTitle</span>
+                        <h3 class="card__title">@characters.CharactersName </h3>
+                        <h6 class="card__status">@nation - @vision</h6>
+                        <span class="card__status">@characters.CharactersTitle</span>
                     </div>
                 </div>
-                <p class="card__description">@character.CharactersDescription</p>
+                <p class="card__description">@characters.CharactersDescription</p>
             </div>
         </a>
     }

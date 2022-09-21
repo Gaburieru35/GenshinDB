@@ -15,6 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(conn
 builder.Services.AddTransient<INationRepository, NationRepository>();
 builder.Services.AddTransient<ICharactersRepository, CharactersRepository>();
 builder.Services.AddTransient<IWeaponsRepository, WeaponsRepository>();
+builder.Services.AddTransient<IVisionRepository, VisionRepository>();
 
 var app = builder.Build();
 
