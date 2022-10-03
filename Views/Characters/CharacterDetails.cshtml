@@ -1,12 +1,32 @@
-﻿@model GenshinDB.Models.Characters
+﻿@{
+    Layout = "_CharacterPage";
+}
+
+@model GenshinDB.Models.Characters
+
+@{
+    string vision = @Model.VisionId.ToString();
+    switch (vision)
+    {
+        case "1":
+            vision = "Pyro";
+            break;
+
+        case "2":
+            vision = "Hydro";
+            break;
+    }
+}
+
+<div class="div">
+    <h2 class="Title-@vision">@Model.CharactersName</h2>
+    <h2>@Model.CharactersTitle</h2>
+</div>
 
 
-    <div>
-        <h2 style="margin-top:8px;">@Model.CharactersName</h2>
-        <h2>@Model.CharactersTitle</h2>
-    </div>
-
-
-    <h3>@Model.CharactersId</h3>
-    <h3>@Model.CharactersDescription</h3>
-    
+<h3>@Model.CharactersId</h3>
+<h3>@vision</h3>
+<h3>@Model.CharactersDescription</h3>
+<h3>@Model.CharactersBirthday</h3>
+<h3>@Model.CharactersAffiliation</h3>
+<h3>@Model.CharactersVoiceActor</h3>

@@ -16,13 +16,20 @@
   <ItemGroup>
     <Compile Remove="Repositories\Interfaces\ICharacterInterface.cs" />
     <Compile Remove="Views\Characters\CharacterDetails.cshtml.cs" />
+    <Compile Remove="Views\Shared\_CharacterPage.cshtml.cs" />
     <Compile Remove="Views\Weapons\WeaponDetails.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="Views\Characters\ListCharacters - Cópia.cshtml" />
     <Content Remove="Views\Characters\ListWeapons.cshtml" />
+    <Content Remove="Views\Shared\_Layout - Cópia.cshtml" />
     <Content Remove="Views\Weapons\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Shared\_CharacterPage.cshtml.css" />
+    <None Remove="Views\Shared\_Layout - Cópia.cshtml.css" />
   </ItemGroup>
 
   <ItemGroup>

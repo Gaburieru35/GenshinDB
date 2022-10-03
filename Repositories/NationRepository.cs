@@ -14,5 +14,10 @@ namespace GenshinDB.Repositories
         }
 
         public IEnumerable<Nations> Nations => _context.Nations;
+
+        public Nations GetNationsById(int nationid)
+        {
+            return _context.Nations.FirstOrDefault(n => n.NationId == nationid);
+        }
     }
 }

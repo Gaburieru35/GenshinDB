@@ -17,5 +17,11 @@ namespace GenshinDB.Controllers
             var nation = _nationRepository.Nations;
             return View(nation);
         }
+
+        public IActionResult NationDetails(int id)
+        {
+            var nations = _nationRepository.GetNationsById(id);
+            return View(nations);
+        }
     }
 }

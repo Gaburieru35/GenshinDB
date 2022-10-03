@@ -1,17 +1,17 @@
 ﻿@model IEnumerable<GenshinDB.Models.Nations>
 
 <div>
-    <h2 style="margin-top:8px;">Nations</h2>
+    <h2>Nations</h2>
 </div>
 
 <ul class="cards">
 @foreach (var nation in Model)
 {
-    <a class="card" asp-controller="#" asp-action="#" asp-route-id="#">
+    <a class="card" asp-controller="Nations" asp-action="NationDetails" asp-route-id="@nation.NationId">
             <img style="width:100%; height:100px;" src="#" class="card__image" alt="" />
             <div class="card__overlay">
                 <div class="card__header">
-                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"></svg>
                     <div class="card__header-text">
                         <h3 class="card__title">@nation.NationName </h3>
                     </div>

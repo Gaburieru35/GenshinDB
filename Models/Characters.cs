@@ -34,5 +34,11 @@ namespace GenshinDB.Models
         public virtual Nations Nation { get; set; }
         public int VisionId { get; set; }
         public virtual Visions Vision { get; set; }
+
+        public string CharactersVoiceActor { get; set; }
+
+        public string CharactersBirthday { get; set; }
+
+        public string CharactersAffiliation {get; set; }
     }
 }
