@@ -3,11 +3,112 @@
 /*Pyro*/
 
 body {
-
+    margin-top: 100px;
+    font-family: 'Figtree', sans-serif;
+    width: 100%;
+    height: 1080px;
+    background-image: url(/res/images/pyroBackground.png);
 }
 
-.div .Title-Pyro{
+body h2, h3{
+    font-size: 18px;
+}
+body .character-wish{
+    top: -5%;
+    position: absolute;
+    left:50%;
+    width: 40%;
+    height: 70%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+body .character-title-info{
+    justify-content: center;
+    margin-left:10%;
+    margin-bottom: 400px;
+    color: white;
+}
+
+body .character-title-info .name-info{
+    display: flex;
+    color: white;
+}
+
+body .character-title-info .name-info .rarity{
+    text-decoration: none;
+    color: yellow;
+}
+
+body .character-title-info .name-info .Title{
+    margin-top:10px;
+    margin-left: 10px;
+}
+
+body .character-title-info .name-info a{
+    font-size: 20px;
+}
+
+body .character-title-info .name-info .vision-img{
+    margin-top:20px;
+    margin-left: 10px;
+}
+
+h2 .Title{
+    margin-left: 50px;
+}
+
+body .character-title-info .Title{
+    color: white;
+    font-size: 40px;
+    font-weight:600;
+}
+
+body .character-title-info .character-icon {
+    width:80px;
+    height:80px;
+    margin-top: 12px;
+}
+
+body .character-title-info .vision-img {
+    margin-left: 5px;
+    margin-bottom: 5px; 
+    width:30px;
+    height:30px;
+}
+
+body .character{
+    justify-content: center;
+    margin-left: 10%;
+    width: 80%;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(61, 24, 24, 0.870);
+}
+
+body .character h3{
+    color: rgb(108, 80, 80);
+}
+
+body .character h2{
+    color: rgb(108, 80, 80);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+body .character .variables{
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+body .Title-Pyro {
     color: red;
 }
 
-/**/
+/*Hydro*/
+
+body .Title-Hydro {
+    color: blue;
+}

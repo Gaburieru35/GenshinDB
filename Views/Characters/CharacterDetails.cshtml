@@ -5,6 +5,8 @@
 @model GenshinDB.Models.Characters
 
 @{
+    string rarity = "";
+
     string vision = @Model.VisionId.ToString();
     switch (vision)
     {
@@ -17,16 +19,29 @@
             break;
     }
 }
+<body>
+    <div class="character-title-info">
+        <img class="character-wish" src="~/res/images/hutao-wish.png">
+        <div class="name-info">
+            <img class="character-icon" src="~/res/images/@Model.CharactersName-icon.jpg">
+            @foreach (int i in Enumerable.Range(0, Model.CharactersRarity))
+            {
+                rarity += "★";
+            }
+            <h2 class="Title">@Model.CharactersName<br><a class="rarity">@rarity</a></h2>
+            <img class="vision-img" src="~/res/images/@vision-vision.png">
+        </div>
+        <h2 class="desc">@Model.CharactersDescription</h2>
+    </div>
 
-<div class="div">
-    <h2 class="Title-@vision">@Model.CharactersName</h2>
-    <h2>@Model.CharactersTitle</h2>
-</div>
-
-
-<h3>@Model.CharactersId</h3>
-<h3>@vision</h3>
-<h3>@Model.CharactersDescription</h3>
-<h3>@Model.CharactersBirthday</h3>
-<h3>@Model.CharactersAffiliation</h3>
-<h3>@Model.CharactersVoiceActor</h3>
+    <div class="character">
+        <h2>Attributes</h2>
+        <h3>Name: <a class="variables">@Model.CharactersName</a></h3>
+        <h3>Vision: <a class="variables">@vision</a></h3>
+        <h3>Constellation: <a class="variables">@Model.CharactersConstelation</a></h3>
+        <h3>Title: <a class="variables">@Model.CharactersTitle</a></h3>
+        <h3>Japanese VA: <a class="variables">@Model.CharactersVoiceActor</a></h3>
+        <h3>Vision: <a class="variables">@vision</a></h3>
+        <h3>Affiliation: <a class="variables">@Model.CharactersAffiliation</a></h3>
+    </div>
+</body>
