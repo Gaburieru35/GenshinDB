@@ -21,27 +21,44 @@
 }
 <body>
     <div class="character-title-info">
-        <img class="character-wish" src="~/res/images/hutao-wish.png">
+        @*<img class="character-wish" src="~/res/images/characters/@Model.CharactersName-wish.png">*@
         <div class="name-info">
-            <img class="character-icon" src="~/res/images/@Model.CharactersName-icon.jpg">
+            <img class="character-icon" src="~/res/images/characters/@Model.CharactersName-icon.jpg">
             @foreach (int i in Enumerable.Range(0, Model.CharactersRarity))
             {
                 rarity += "★";
             }
             <h2 class="Title">@Model.CharactersName<br><a class="rarity">@rarity</a></h2>
-            <img class="vision-img" src="~/res/images/@vision-vision.png">
+            <img class="vision-img" src="~/res/images/characters/@vision-vision.png">
         </div>
         <h2 class="desc">@Model.CharactersDescription</h2>
     </div>
 
     <div class="character">
         <h2>Attributes</h2>
-        <h3>Name: <a class="variables">@Model.CharactersName</a></h3>
-        <h3>Vision: <a class="variables">@vision</a></h3>
-        <h3>Constellation: <a class="variables">@Model.CharactersConstelation</a></h3>
-        <h3>Title: <a class="variables">@Model.CharactersTitle</a></h3>
-        <h3>Japanese VA: <a class="variables">@Model.CharactersVoiceActor</a></h3>
-        <h3>Vision: <a class="variables">@vision</a></h3>
-        <h3>Affiliation: <a class="variables">@Model.CharactersAffiliation</a></h3>
+        <div class="row">
+            <div class="col-md-2"><h3>Name</h3></div>
+            <div class="col-md-4"><a class="variables">@Model.CharactersName</a></div>
+            <div class="col-md-2"><h3>Vision</h3></div>
+            <div class="col-md-4"><a class="variables">@vision</a></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"><h3>Constellation</h3></div>
+            <div class="col-md-4"><a class="variables">@Model.CharactersConstelation</a></div>
+            <div class="col-md-2"><h3>Title</h3></div>
+            <div class="col-md-4"><a class="variables">@Model.CharactersTitle</a></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"><h3>Japanese VA</h3></div>
+            <div class="col-md-4"><a class="variables">@Model.CharactersVoiceActor</a></div>
+            <div class="col-md-2"><h3>Vision</h3></div>
+            <div class="col-md-4"><a class="variables">@vision</a></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"><h3>Affiliation</h3></div>
+            <div class="col-md-4"><a class="variables">@Model.CharactersAffiliation</a></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4"></div>
+        </div>
     </div>
 </body>

@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <Compile Remove="Repositories\Interfaces\ICharacterInterface.cs" />
+    <Compile Remove="ViewModels\CharactersDetailsViewModel.cs" />
     <Compile Remove="Views\Characters\CharacterDetails.cshtml.cs" />
     <Compile Remove="Views\Shared\_CharacterPage.cshtml.cs" />
     <Compile Remove="Views\Weapons\WeaponDetails.cshtml.cs" />
@@ -35,7 +36,7 @@
   <ItemGroup>
     <Folder Include="Migrations\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="wwwroot\res\images\" />
+    <Folder Include="wwwroot\res\images\characters\" />
   </ItemGroup>
 
   <ItemGroup>
