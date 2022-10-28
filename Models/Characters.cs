@@ -40,5 +40,7 @@ namespace GenshinDB.Models
         public string CharactersBirthday { get; set; }
 
         public string CharactersAffiliation {get; set; }
+
+        public virtual CharactersTags CharactersTag { get; set; }
     }
 }

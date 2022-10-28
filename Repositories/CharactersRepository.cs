@@ -19,7 +19,8 @@ namespace GenshinDB.Repositories
 
         public Characters GetCharactersById(int characterid)
         {
-            return _context.Characters.FirstOrDefault(c => c.CharactersId == characterid);
-        }
+            var characters = _context.Characters.FirstOrDefault(c => c.CharactersId == characterid);
+            return characters;
+        } 
     }
 }

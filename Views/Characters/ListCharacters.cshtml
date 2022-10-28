@@ -1,11 +1,11 @@
-﻿@model IEnumerable<GenshinDB.Models.Characters>
+﻿@model CharacterDetailsViewModel
 
 <div>
     <h2>Characters</h2>
 </div>
 
 <ul class="cards">
-    @foreach (var characters in Model)
+    @foreach (var characters in Model.Characters)
     {
         string nation = @characters.NationID.ToString();
         string vision = @characters.VisionId.ToString();
@@ -20,7 +20,7 @@
                 vision = "Hydro";
                 break;
         }
-
+     
         switch (nation)
         {
             case "1":

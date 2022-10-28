@@ -1,4 +1,6 @@
-﻿using GenshinDB.Repositories.Interfaces;
+﻿using GenshinDB.Models;
+using GenshinDB.Repositories.Interfaces;
+using GenshinDB.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GenshinDB.Controllers
@@ -15,15 +17,17 @@ namespace GenshinDB.Controllers
 
         public IActionResult ListCharacters()
         {
-            var characters = _characterRepository.Characters;
-            return View(characters);
+            var characterDetailsViewModel = new CharacterDetailsViewModel();
+            characterDetailsViewModel.Characters = _characterRepository.Characters;
+            //var characters = _characterRepository.Characters;
+            return View(characterDetailsViewModel);
         }
 
         public IActionResult CharacterDetails(int id)
         {
-            var characters = _characterRepository.GetCharactersById(id);
-            //characters.GetType();
-            return View(characters);
+            var characterDetailsViewModel = new CharacterDetailsViewModel();
+            characterDetailsViewModel.Character = _characterRepository.GetCharactersById(id);
+            return View(characterDetailsViewModel);
         }
     }
 }

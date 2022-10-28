@@ -2,12 +2,12 @@
     Layout = "_CharacterPage";
 }
 
-@model GenshinDB.Models.Characters
+@model CharacterDetailsViewModel
 
 @{
     string rarity = "";
 
-    string vision = @Model.VisionId.ToString();
+    string vision = @Model.Character.VisionId.ToString();
     switch (vision)
     {
         case "1":
@@ -23,41 +23,40 @@
     <div class="character-title-info">
         @*<img class="character-wish" src="~/res/images/characters/@Model.CharactersName-wish.png">*@
         <div class="name-info">
-            <img class="character-icon" src="~/res/images/characters/@Model.CharactersName-icon.jpg">
-            @foreach (int i in Enumerable.Range(0, Model.CharactersRarity))
+            <img class="character-icon" src="~/res/images/characters/@Model.Character.CharactersName-icon.jpg">
+            @foreach (int i in Enumerable.Range(0, Model.Character.CharactersRarity))
             {
                 rarity += "★";
             }
-            <h2 class="Title">@Model.CharactersName<br><a class="rarity">@rarity</a></h2>
+            <h2 class="Title">@Model.Character.CharactersName<br><a class="rarity">@rarity</a></h2>
             <img class="vision-img" src="~/res/images/characters/@vision-vision.png">
         </div>
-        <h2 class="desc">@Model.CharactersDescription</h2>
+        <h2 class="desc">@Model.Character.CharactersDescription</h2>
     </div>
-
     <div class="character">
         <h2>Attributes</h2>
         <div class="row">
-            <div class="col-md-2"><h3>Name</h3></div>
-            <div class="col-md-4"><a class="variables">@Model.CharactersName</a></div>
+            <div class="col-md-2"><h3>Name: </h3></div>
+            <div class="col-md-4"><a class="variables">@Model.Character.CharactersName</a></div>
             <div class="col-md-2"><h3>Vision</h3></div>
             <div class="col-md-4"><a class="variables">@vision</a></div>
         </div>
         <div class="row">
             <div class="col-md-2"><h3>Constellation</h3></div>
-            <div class="col-md-4"><a class="variables">@Model.CharactersConstelation</a></div>
+            <div class="col-md-4"><a class="variables">@Model.Character.CharactersConstelation</a></div>
             <div class="col-md-2"><h3>Title</h3></div>
-            <div class="col-md-4"><a class="variables">@Model.CharactersTitle</a></div>
+            <div class="col-md-4"><a class="variables">@Model.Character.CharactersTitle</a></div>
         </div>
         <div class="row">
             <div class="col-md-2"><h3>Japanese VA</h3></div>
-            <div class="col-md-4"><a class="variables">@Model.CharactersVoiceActor</a></div>
-            <div class="col-md-2"><h3>Vision</h3></div>
-            <div class="col-md-4"><a class="variables">@vision</a></div>
+            <div class="col-md-4"><a class="variables">@Model.Character.CharactersVoiceActor</a></div>
+            <div class="col-md-2"><h3>Affiliation</h3></div>
+            <div class="col-md-4"><a class="variables">@Model.Character.CharactersAffiliation</a></div>
         </div>
         <div class="row">
-            <div class="col-md-2"><h3>Affiliation</h3></div>
-            <div class="col-md-4"><a class="variables">@Model.CharactersAffiliation</a></div>
-            <div class="col-md-2"></div>
+            <div class="col-md-2"><a></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-2"><a></div>
             <div class="col-md-4"></div>
         </div>
     </div>

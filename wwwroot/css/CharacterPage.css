@@ -8,6 +8,8 @@ body {
     width: 60%;
     height: 60%;
     background-image: url(/res/images/characters/pyroBackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body h2, h3{
